@@ -27,7 +27,12 @@ webpackConfig.module.loaders.push({
 
 webpackConfig.module.loaders.push({
   test: /\.(css)$/,
-  loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+  loader: 'style-loader!css-loader!resolve-url-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+});
+
+webpackConfig.module.loaders.push({
+  test: /\.(eot|svg|ttf|woff|woff2)$/,
+  loader: 'file?name=./src/fonts/[name].[ext]'
 });
 
 module.exports = webpackConfig;

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import AccountEntry from './AccountEntry';
-import styles from './AccountView.css';
+import styles from './styles/accountView.css';
 
 class AccountView extends Component {
   render() {
-    console.log('styles', styles)
     const accounts = this.props.accounts;
     if (!accounts || !accounts.length) {
       return null;
@@ -12,11 +11,10 @@ class AccountView extends Component {
     const accountEntries = makeEntries(accounts);
 
     return (
-      <table className="accountTable">
+      <table className={styles.accountTable}>
         <thead>
           <tr>
-            <th className="firstCol"
-            > ACCOUNT </th>
+            <th className={styles.firstCol}> ACCOUNT </th>
             <th> CREATED ON </th>
             <th> MEMBERSHIP </th>
             <th> COVERAGE LEVEL </th>

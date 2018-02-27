@@ -1,0 +1,12 @@
+.accountTable {
+  font-family: 'apercu-regular-pro', Fallback, sans-serif;
+}
+
+th {
+  text-align: right;
+  font-weight: normal;
+}
+
+.firstCol {
+  text-align: left;
+}
