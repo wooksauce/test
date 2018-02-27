@@ -30,7 +30,6 @@ class AccountEntry extends Component {
         <td> $ {account.coverage_level} </td>
         <td> $ {account.revenue} </td>
         <td onClick={this.openEditModal}> edit </td>
-        {console.log('edit', this.state.showEditModal)}
         <EditModal
           showEditModal={this.state.showEditModal}
           closeEditModal={this.closeEditModal}

@@ -26,8 +26,10 @@ webpackConfig.module.loaders.push({
 });
 
 webpackConfig.module.loaders.push({
-  test: /\.(css)$/,
-  loader: 'style-loader!css-loader!resolve-url-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+  test: /\.(scss|css)$/,
+  loader: 'style-loader!css-loader?modules&sourceMap&localIdentName=[local]___[hash:base64:5]!sass-loader?outputStyle=expanded&sourceMap'
+  ,
+  // loader: 'style-loader!css-loader!resolve-url-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
 });
 
 webpackConfig.module.loaders.push({
