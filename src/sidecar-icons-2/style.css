@@ -1,0 +1,306 @@
+@font-face {
+  font-family: 'sidecar-icons';
+  src:  url('fonts/sidecar-icons.eot?3w8p1w');
+  src:  url('fonts/sidecar-icons.eot?3w8p1w#iefix') format('embedded-opentype'),
+    url('fonts/sidecar-icons.ttf?3w8p1w') format('truetype'),
+    url('fonts/sidecar-icons.woff?3w8p1w') format('woff'),
+    url('fonts/sidecar-icons.svg?3w8p1w#sidecar-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="sidecar-icon-"], [class*=" sidecar-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'sidecar-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sidecar-icon-back:before {
+  content: "\2b05";
+  color: #aaa;
+}
+.sidecar-icon-forward:before {
+  content: "\27a1";
+  color: #aaa;
+}
+.sidecar-icon-dropdown:before {
+  content: "\1f53d";
+  color: #aaa;
+}
+.sidecar-icon-x:before {
+  content: "\78";
+  color: #aaa;
+}
+.sidecar-icon-bookmark:before {
+  content: "\e90d";
+  color: #aaa;
+}
+.sidecar-icon-bookmarkfilled:before {
+  content: "\1f516";
+  color: #aaa;
+}
+.sidecar-icon-calendar:before {
+  content: "\1f4c5";
+  color: #aaa;
+}
+.sidecar-icon-search:before {
+  content: "\1f50e";
+  color: #aaa;
+}
+.sidecar-icon-plus:before {
+  content: "\2b";
+  color: #aaa;
+}
+.sidecar-icon-minus:before {
+  content: "\2013";
+  color: #aaa;
+}
+.sidecar-icon-eye:before {
+  content: "\1f441";
+  color: #aaa;
+}
+.sidecar-icon-hide:before {
+  content: "\1f648";
+  color: #aaa;
+}
+.sidecar-icon-pin:before {
+  content: "\1f4cd";
+  color: #aaa;
+}
+.sidecar-icon-female:before {
+  content: "\2640";
+  color: #aaa;
+}
+.sidecar-icon-male:before {
+  content: "\2642";
+  color: #aaa;
+}
+.sidecar-icon-filter:before {
+  content: "\e918";
+  color: #aaa;
+}
+.sidecar-icon-filtered:before {
+  content: "\e919";
+  color: #aaa;
+}
+.sidecar-icon-flash:before {
+  content: "\26a1";
+  color: #aaa;
+}
+.sidecar-icon-flashoff:before {
+  content: "\e91c";
+  color: #aaa;
+}
+.sidecar-icon-photos:before {
+  content: "\1f5bc";
+  color: #aaa;
+}
+.sidecar-icon-menu:before {
+  content: "\2630";
+  color: #aaa;
+}
+.sidecar-icon-processing:before {
+  content: "\1f504";
+  color: #aaa;
+}
+.sidecar-icon-share:before {
+  content: "\23";
+  color: #aaa;
+}
+.sidecar-icon-trash:before {
+  content: "\1f5d1";
+  color: #aaa;
+}
+.sidecar-icon-lock:before {
+  content: "\1f512";
+  color: #aaa;
+}
+.sidecar-icon-approve:before {
+  content: "\1f44d";
+  color: #aaa;
+}
+.sidecar-icon-deny:before {
+  content: "\1f44e";
+  color: #aaa;
+}
+.sidecar-icon-export:before {
+  content: "\23ec";
+  color: #aaa;
+}
+.sidecar-icon-upload:before {
+  content: "\23eb";
+  color: #aaa;
+}
+.sidecar-icon-email:before {
+  content: "\1f4e7";
+  color: #aaa;
+}
+.sidecar-icon-phone:before {
+  content: "\1f4de";
+  color: #aaa;
+}
+.sidecar-icon-edit:before {
+  content: "\270f";
+  color: #aaa;
+}
+.sidecar-icon-columns:before {
+  content: "\25a5";
+  color: #aaa;
+}
+.sidecar-icon-segment:before {
+  content: "\2325";
+  color: #aaa;
+}
+.sidecar-icon-drag:before {
+  content: "\22ee";
+  color: #aaa;
+}
+.sidecar-icon-account:before {
+  content: "\1f468";
+  color: #aaa;
+}
+.sidecar-icon-pivot:before {
+  content: "\25f0";
+  color: #aaa;
+}
+.sidecar-icon-dashboard:before {
+  content: "\1f3e0";
+  color: #aaa;
+}
+.sidecar-icon-expense:before {
+  content: "\1f4c3";
+  color: #aaa;
+}
+.sidecar-icon-lead:before {
+  content: "\1f3af";
+  color: #aaa;
+}
+.sidecar-icon-money:before {
+  content: "\1f4b5";
+  color: #aaa;
+}
+.sidecar-icon-creditcard:before {
+  content: "\1f4b3";
+  color: #aaa;
+}
+.sidecar-icon-customer:before {
+  content: "\1f464";
+  color: #aaa;
+}
+.sidecar-icon-reports:before {
+  content: "\1f4ca";
+  color: #aaa;
+}
+.sidecar-icon-settings:before {
+  content: "\2699";
+  color: #aaa;
+}
+.sidecar-icon-dermatology:before {
+  content: "\e934";
+  color: #aaa;
+}
+.sidecar-icon-doctors:before {
+  content: "\1f637";
+  color: #aaa;
+}
+.sidecar-icon-dentist:before {
+  content: "\1f444";
+  color: #aaa;
+}
+.sidecar-icon-rx:before {
+  content: "\1f48a";
+  color: #aaa;
+}
+.sidecar-icon-injury:before {
+  content: "\1f915";
+  color: #aaa;
+}
+.sidecar-icon-sick:before {
+  content: "\1f321";
+  color: #aaa;
+}
+.sidecar-icon-spine:before {
+  content: "\1f356";
+  color: #aaa;
+}
+.sidecar-icon-cardio:before {
+  content: "\2665";
+  color: #aaa;
+}
+.sidecar-icon-vision:before {
+  content: "\1f440";
+  color: #aaa;
+}
+.sidecar-icon-cancer:before {
+  content: "\1f397";
+  color: #aaa;
+}
+.sidecar-icon-baby:before {
+  content: "\1f476";
+  color: #aaa;
+}
+.sidecar-icon-ambulance:before {
+  content: "\1f691";
+  color: #aaa;
+}
+.sidecar-icon-foot:before {
+  content: "\1f463";
+  color: #aaa;
+}
+.sidecar-icon-procedure:before {
+  content: "\1f3e5";
+  color: #aaa;
+}
+.sidecar-icon-genetics:before {
+  content: "\22c8";
+  color: #aaa;
+}
+.sidecar-icon-brain:before {
+  content: "\1f4ad";
+  color: #aaa;
+}
+.sidecar-icon-lab:before {
+  content: "\2697";
+  color: #aaa;
+}
+.sidecar-icon-imaging:before {
+  content: "\2620";
+  color: #aaa;
+}
+.sidecar-icon-vaccine:before {
+  content: "\1f489";
+  color: #aaa;
+}
+.sidecar-icon-research:before {
+  content: "\1f52c";
+  color: #aaa;
+}
+.sidecar-icon-error:before {
+  content: "\21";
+  color: #aaa;
+}
+.sidecar-icon-success:before {
+  content: "\2705";
+  color: #aaa;
+}
+.sidecar-icon-warning:before {
+  content: "\26a0";
+  color: #aaa;
+}
+.sidecar-icon-cancel:before {
+  content: "\274c";
+  color: #aaa;
+}
+.sidecar-icon-tooltip:before {
+  content: "\3f";
+  color: #aaa;
+}

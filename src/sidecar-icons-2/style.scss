@@ -1,0 +1,379 @@
+@import "variables";
+
+@font-face {
+  font-family: 'sidecar-icons';
+  src:  url('#{$icomoon-font-path}/sidecar-icons.eot?3w8p1w');
+  src:  url('#{$icomoon-font-path}/sidecar-icons.eot?3w8p1w#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/sidecar-icons.ttf?3w8p1w') format('truetype'),
+    url('#{$icomoon-font-path}/sidecar-icons.woff?3w8p1w') format('woff'),
+    url('#{$icomoon-font-path}/sidecar-icons.svg?3w8p1w#sidecar-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="sidecar-icon-"], [class*=" sidecar-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'sidecar-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sidecar-icon-back {
+  &:before {
+    content: $sidecar-icon-back;
+  }
+}
+.sidecar-icon-forward {
+  &:before {
+    content: $sidecar-icon-forward;
+  }
+}
+.sidecar-icon-dropdown {
+  &:before {
+    content: $sidecar-icon-dropdown;
+  }
+}
+.sidecar-icon-x {
+  &:before {
+    content: $sidecar-icon-x;
+  }
+}
+.sidecar-icon-bookmark {
+  &:before {
+    content: $sidecar-icon-bookmark;
+  }
+}
+.sidecar-icon-bookmarkfilled {
+  &:before {
+    content: $sidecar-icon-bookmarkfilled;
+  }
+}
+.sidecar-icon-calendar {
+  &:before {
+    content: $sidecar-icon-calendar;
+  }
+}
+.sidecar-icon-search {
+  &:before {
+    content: $sidecar-icon-search;
+  }
+}
+.sidecar-icon-plus {
+  &:before {
+    content: $sidecar-icon-plus;
+  }
+}
+.sidecar-icon-minus {
+  &:before {
+    content: $sidecar-icon-minus;
+  }
+}
+.sidecar-icon-eye {
+  &:before {
+    content: $sidecar-icon-eye;
+  }
+}
+.sidecar-icon-hide {
+  &:before {
+    content: $sidecar-icon-hide;
+  }
+}
+.sidecar-icon-pin {
+  &:before {
+    content: $sidecar-icon-pin;
+  }
+}
+.sidecar-icon-female {
+  &:before {
+    content: $sidecar-icon-female;
+  }
+}
+.sidecar-icon-male {
+  &:before {
+    content: $sidecar-icon-male;
+  }
+}
+.sidecar-icon-filter {
+  &:before {
+    content: $sidecar-icon-filter;
+  }
+}
+.sidecar-icon-filtered {
+  &:before {
+    content: $sidecar-icon-filtered;
+  }
+}
+.sidecar-icon-flash {
+  &:before {
+    content: $sidecar-icon-flash;
+  }
+}
+.sidecar-icon-flashoff {
+  &:before {
+    content: $sidecar-icon-flashoff;
+  }
+}
+.sidecar-icon-photos {
+  &:before {
+    content: $sidecar-icon-photos;
+  }
+}
+.sidecar-icon-menu {
+  &:before {
+    content: $sidecar-icon-menu;
+  }
+}
+.sidecar-icon-processing {
+  &:before {
+    content: $sidecar-icon-processing;
+  }
+}
+.sidecar-icon-share {
+  &:before {
+    content: $sidecar-icon-share;
+  }
+}
+.sidecar-icon-trash {
+  &:before {
+    content: $sidecar-icon-trash;
+  }
+}
+.sidecar-icon-lock {
+  &:before {
+    content: $sidecar-icon-lock;
+  }
+}
+.sidecar-icon-approve {
+  &:before {
+    content: $sidecar-icon-approve;
+  }
+}
+.sidecar-icon-deny {
+  &:before {
+    content: $sidecar-icon-deny;
+  }
+}
+.sidecar-icon-export {
+  &:before {
+    content: $sidecar-icon-export;
+  }
+}
+.sidecar-icon-upload {
+  &:before {
+    content: $sidecar-icon-upload;
+  }
+}
+.sidecar-icon-email {
+  &:before {
+    content: $sidecar-icon-email;
+  }
+}
+.sidecar-icon-phone {
+  &:before {
+    content: $sidecar-icon-phone;
+  }
+}
+.sidecar-icon-edit {
+  &:before {
+    content: $sidecar-icon-edit;
+  }
+}
+.sidecar-icon-columns {
+  &:before {
+    content: $sidecar-icon-columns;
+  }
+}
+.sidecar-icon-segment {
+  &:before {
+    content: $sidecar-icon-segment;
+  }
+}
+.sidecar-icon-drag {
+  &:before {
+    content: $sidecar-icon-drag;
+  }
+}
+.sidecar-icon-account {
+  &:before {
+    content: $sidecar-icon-account;
+  }
+}
+.sidecar-icon-pivot {
+  &:before {
+    content: $sidecar-icon-pivot;
+  }
+}
+.sidecar-icon-dashboard {
+  &:before {
+    content: $sidecar-icon-dashboard;
+  }
+}
+.sidecar-icon-expense {
+  &:before {
+    content: $sidecar-icon-expense;
+  }
+}
+.sidecar-icon-lead {
+  &:before {
+    content: $sidecar-icon-lead;
+  }
+}
+.sidecar-icon-money {
+  &:before {
+    content: $sidecar-icon-money;
+  }
+}
+.sidecar-icon-creditcard {
+  &:before {
+    content: $sidecar-icon-creditcard;
+  }
+}
+.sidecar-icon-customer {
+  &:before {
+    content: $sidecar-icon-customer;
+  }
+}
+.sidecar-icon-reports {
+  &:before {
+    content: $sidecar-icon-reports;
+  }
+}
+.sidecar-icon-settings {
+  &:before {
+    content: $sidecar-icon-settings;
+  }
+}
+.sidecar-icon-dermatology {
+  &:before {
+    content: $sidecar-icon-dermatology;
+  }
+}
+.sidecar-icon-doctors {
+  &:before {
+    content: $sidecar-icon-doctors;
+  }
+}
+.sidecar-icon-dentist {
+  &:before {
+    content: $sidecar-icon-dentist;
+  }
+}
+.sidecar-icon-rx {
+  &:before {
+    content: $sidecar-icon-rx;
+  }
+}
+.sidecar-icon-injury {
+  &:before {
+    content: $sidecar-icon-injury;
+  }
+}
+.sidecar-icon-sick {
+  &:before {
+    content: $sidecar-icon-sick;
+  }
+}
+.sidecar-icon-spine {
+  &:before {
+    content: $sidecar-icon-spine;
+  }
+}
+.sidecar-icon-cardio {
+  &:before {
+    content: $sidecar-icon-cardio;
+  }
+}
+.sidecar-icon-vision {
+  &:before {
+    content: $sidecar-icon-vision;
+  }
+}
+.sidecar-icon-cancer {
+  &:before {
+    content: $sidecar-icon-cancer;
+  }
+}
+.sidecar-icon-baby {
+  &:before {
+    content: $sidecar-icon-baby;
+  }
+}
+.sidecar-icon-ambulance {
+  &:before {
+    content: $sidecar-icon-ambulance;
+  }
+}
+.sidecar-icon-foot {
+  &:before {
+    content: $sidecar-icon-foot;
+  }
+}
+.sidecar-icon-procedure {
+  &:before {
+    content: $sidecar-icon-procedure;
+  }
+}
+.sidecar-icon-genetics {
+  &:before {
+    content: $sidecar-icon-genetics;
+  }
+}
+.sidecar-icon-brain {
+  &:before {
+    content: $sidecar-icon-brain;
+  }
+}
+.sidecar-icon-lab {
+  &:before {
+    content: $sidecar-icon-lab;
+  }
+}
+.sidecar-icon-imaging {
+  &:before {
+    content: $sidecar-icon-imaging;
+  }
+}
+.sidecar-icon-vaccine {
+  &:before {
+    content: $sidecar-icon-vaccine;
+  }
+}
+.sidecar-icon-research {
+  &:before {
+    content: $sidecar-icon-research;
+  }
+}
+.sidecar-icon-error {
+  &:before {
+    content: $sidecar-icon-error;
+  }
+}
+.sidecar-icon-success {
+  &:before {
+    content: $sidecar-icon-success;
+  }
+}
+.sidecar-icon-warning {
+  &:before {
+    content: $sidecar-icon-warning;
+  }
+}
+.sidecar-icon-cancel {
+  &:before {
+    content: $sidecar-icon-cancel;
+  }
+}
+.sidecar-icon-tooltip {
+  &:before {
+    content: $sidecar-icon-tooltip;
+  }
+}
+
