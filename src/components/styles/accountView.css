@@ -28,17 +28,21 @@ th.firstCol {
 }
 
 th.createdOn {
-  width: 14%
+  width: 13%
 }
 
 th.membership {
-  width: 19%
+  width: 18%
 }
 
 th.coverLvl {
-  width: 19%
+  width: 18%
 }
 
 th.revenue {
-  width: 19%
+  width: 18%
+}
+
+th.editIcon {
+  text-align: center;
 }

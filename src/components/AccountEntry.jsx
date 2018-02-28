@@ -32,7 +32,12 @@ class AccountEntry extends Component {
         <td> ${account.membership} </td>
         <td> {account.coverageLevel}% </td>
         <td> ${account.revenue} </td>
-        <td onClick={this.openEditModal}> edit </td>
+        <td
+          onClick={this.openEditModal}
+          className={styles.editIcon}
+        >
+          <span aria-hidden="true" className={styles.sidecarIconEdit}></span>
+        </td>
         <EditModal
           showEditModal={this.state.showEditModal}
           closeEditModal={this.closeEditModal}

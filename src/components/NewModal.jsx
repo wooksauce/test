@@ -51,46 +51,66 @@ class NewModal extends Component {
         className={styles.newModal}
         overlayClassName={styles.overlay}
       >
+        <span
+          aria-hidden="true"
+          className={styles.sidecarIconX}
+          onClick={this.props.closeNewModal}
+        />
         <div className={styles.header}>
           Add new account
         </div>
         <hr />
         <form className={styles.newAccountInfo}>
-          <input
-            className={[styles.firstName, styles.newModalInput].join(' ')}
-            type="text"
-            name="firstName"
-            placeholder="First name"
-            onChange={(e) => this.handleTyping(e, 'firstName')}
-          />
-          <input
-            className={[styles.lastName, styles.newModalInput].join(' ')}
-            type="text"
-            name="lastName"
-            placeholder="Last name"
-            onChange={(e) => this.handleTyping(e, 'lastName')}
-          />
-          <input
-            className={[styles.membership, styles.newModalInput].join(' ')}
-            type="text"
-            name="Membership"
-            placeholder="Memebership"
-            onChange={(e) => this.handleTyping(e, 'membership')}
-          />
-          <input
-            className={[styles.coverageLevel, styles.newModalInput].join(' ')}
-            type="text"
-            name="CoverageLevel"
-            placeholder="Coverage level"
-            onChange={(e) => this.handleTyping(e, 'coverageLevel')}
-          />
-          <input
-            className={[styles.revenue, styles.newModalInput].join(' ')}
-            type="text"
-            name="Revenue"
-            placeholder="Revenue"
-            onChange={(e) => this.handleTyping(e, 'revenue')}
-          />
+          <div className={styles.fieldContainer}>
+            <div className={[styles.small, styles.smallFn].join(' ')}> First name </div>
+            <input
+              className={[styles.firstName, styles.newModalInput].join(' ')}
+              type="text"
+              name="firstName"
+              placeholder="First name"
+              onChange={(e) => this.handleTyping(e, 'firstName')}
+            />
+          </div>
+          <div className={styles.fieldContainer}>
+            <div className={[styles.small, styles.smallLn].join(' ')}> Last name </div>
+            <input
+              className={[styles.lastName, styles.newModalInput].join(' ')}
+              type="text"
+              name="lastName"
+              placeholder="Last name"
+              onChange={(e) => this.handleTyping(e, 'lastName')}
+            />
+          </div>
+          <div className={styles.fieldContainer}>
+            <div className={[styles.small, styles.smallMem].join(' ')}> Membership </div>
+            <input
+              className={[styles.membership, styles.newModalInput].join(' ')}
+              type="text"
+              name="Membership"
+              placeholder="Memebership"
+              onChange={(e) => this.handleTyping(e, 'membership')}
+            />
+          </div>
+          <div className={styles.fieldContainer}>
+            <div className={[styles.small, styles.smallCover].join(' ')}> Coverage Level </div>
+            <input
+              className={[styles.coverageLevel, styles.newModalInput].join(' ')}
+              type="text"
+              name="CoverageLevel"
+              placeholder="Coverage level"
+              onChange={(e) => this.handleTyping(e, 'coverageLevel')}
+            />
+          </div>
+          <div className={styles.fieldContainer}>
+            <div className={[styles.small, styles.smallRev].join(' ')}> Revenue </div>
+            <input
+              className={[styles.revenue, styles.newModalInput].join(' ')}
+              type="text"
+              name="Revenue"
+              placeholder="Revenue"
+              onChange={(e) => this.handleTyping(e, 'revenue')}
+            />
+          </div>
         </form>
         <button className={styles.addButton} onClick={this.addAccount}> Add </button>
       </ReactModal>

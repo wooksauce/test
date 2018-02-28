@@ -33,7 +33,7 @@ class AccountView extends Component {
               <th className={styles.membership}> MEMBERSHIP </th>
               <th className={styles.coverLvl}> COVERAGE LEVEL </th>
               <th className={styles.revenue}> REVENUE </th>
-              <th/>
+              <th className={styles.editIcon}/>
             </tr>
           </thead>
           <tbody>

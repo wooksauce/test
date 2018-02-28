@@ -17,3 +17,14 @@ td {
 .acctRow{
   border-bottom: 1px solid #AAAAAA;
 }
+
+.sidecarIconEdit:before {
+  content: "\270f";
+  color: #64C5AF;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.editIcon {
+  text-align: center;
+}

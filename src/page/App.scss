@@ -1,3 +1,65 @@
+@font-face {
+  font-family: 'apercu-regular-pro';
+  src: url('../../src/fonts/apercu-regular-pro.eot');
+  src: url('../../src/fonts/apercu-regular-pro.eot?#iefix') format('embedded-opentype'),
+       url('../../src/fonts/apercu-regular-pro.woff') format('woff'),
+       url('../../src/fonts/apercu-regular-pro.woff2') format('woff2'),
+       url('../../src/fonts/apercu-regular-pro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'apercu-bold-pro';
+  src: url('../../src/fonts/apercu-bold-pro.eot');
+  src: url('../../src/fonts/apercu-bold-pro.eot?#iefix') format('embedded-opentype'),
+       url('../../src/fonts/apercu-bold-pro.woff') format('woff'),
+       url('../../src/fonts/apercu-bold-pro.woff2') format('woff2'),
+       url('../../src/fonts/apercu-bold-pro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'sidecar-icons';
+  src:  url('../../src/fonts/sidecar-icons.eot?3w8p1w');
+  src:  url('../../src/fonts/sidecar-icons.eot?3w8p1w#iefix') format('embedded-opentype'),
+    url('../../src/fonts/sidecar-icons.ttf?3w8p1w') format('truetype'),
+    url('../../src/fonts/sidecar-icons.woff?3w8p1w') format('woff'),
+    url('../../src/fonts/sidecar-icons.svg?3w8p1w#sidecar-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="sidecarIcon"], [class*=" sidecarIcon"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'sidecar-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sidecarIconBack:before {
+  content: "\2b05";
+  color: #aaa;
+}
+.sidecar-icon-forward:before {
+  content: "\27a1";
+  color: #aaa;
+}
+
+.sidecarIconPlus:before {
+  content: "\2b";
+  color: #FFFFFF;
+}
+
 .mainHeader {
   font-family: 'apercu-regular-pro', Fallback, sans-serif;
   font-size: 36px;
@@ -24,7 +86,7 @@
 }
 
 .addNew {
-  text-align: center;
+  font-family: 'apercu-regular-pro', Fallback, sans-serif;
   height: 50px;
   width: 120px;
   border-radius: 5px;
@@ -33,4 +95,10 @@
   margin: 30px 0 0 40px;
   font-size: 18px;
   border: none;
+  cursor: pointer;
+}
+
+.newButtonText {
+  display: inline-block;
+  padding-left: 10px;
 }

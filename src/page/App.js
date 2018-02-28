@@ -44,6 +44,7 @@ class App extends Component {
     return (
       <div className={styles.basepage}>
         <div className={styles.sideStrip}>
+          <span aria-hidden="true" className={styles.sidecarIconBack}></span>
         </div>
         <div className={styles.mainView}>
           <h1 className={styles.mainHeader}>
@@ -51,8 +52,8 @@ class App extends Component {
           </h1>
           {/* <GraphView accounts={this.state.accounts}/> */}
           <button className={styles.addNew} onClick={this.openNewModal}>
-            {/* plus sign */}
-            <p> New </p>
+            <span aria-hidden="true" className={styles.sidecarIconPlus}></span>
+            <p className={styles.newButtonText}> New </p>
           </button>
           <NewModal
             showNewModal={this.state.showNewModal}

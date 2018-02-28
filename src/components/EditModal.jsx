@@ -45,15 +45,17 @@ class EditModal extends Component {
   }
 
   handleDelete() {
-    axios.delete(`/api/deleteAccount/${this.props.account.accountNum}`)
-    .then (() => {
-      this.props.fetchAllAccounts();
-      alert('Account deleted successfully!');
-    })
-    .catch (err => {
-      console.log('error deleting', err);
-    })
-    this.props.closeEditModal();
+    if (confirm('You sure?')) {
+      axios.delete(`/api/deleteAccount/${this.props.account.accountNum}`)
+      .then (() => {
+        this.props.fetchAllAccounts();
+        alert('Account deleted successfully!');
+      })
+      .catch (err => {
+        console.log('error deleting', err);
+      })
+      this.props.closeEditModal();
+    }
   }
 
   render() {
@@ -71,12 +73,20 @@ class EditModal extends Component {
           <p className={styles.acctNumInfo} >
             Account {displayAcctNum(accountNum)}
           </p>
-          <div className={styles.delButton} onClick={this.handleDelete}> Del </div>
-          <div className={styles.xButton} onClick={this.props.closeEditModal}> x </div>
+          <span
+            aria-hidden="true"
+            className={styles.sidecarIconTrash}
+            onClick={this.handleDelete}
+          />
+          <span
+            aria-hidden="true"
+            className={styles.sidecarIconX}
+            onClick={this.props.closeEditModal}
+          />
         </div>
         <hr />
         <p className={styles.createdOn}>
-          Created On {convertDateEditModal(createdOn)}
+          Created on <span className={styles.date}> {convertDateEditModal(createdOn)} </span>
         </p>
         <form className={styles.editForm}>
           <div className={[styles.small, styles.smallFn].join(' ')}> First name </div>

@@ -14,13 +14,14 @@
   width: 1000px;
   height: 639px;
   margin: 50px auto;
+  position: relative;
 }
 
 .header {
   font-family: 'apercu-regular-pro', Fallback, sans-serif;
   font-size: 36px;
   color: #223D68;
-  padding: 65px 30px 30px;
+  padding: 24px 30px 30px;
 }
 
 .overlay {
@@ -84,4 +85,77 @@ input.newModalInput::placeholder {
   margin: 0 auto;
   font-size: 18px;
   border: none;
+  cursor: pointer;
+}
+
+.fieldContainer {
+  width: auto;
+  display: inline-block;
+  &:focus-within {
+    .smallFn {
+      display: block;
+    }
+    .smallLn {
+      display: block;
+    }
+    .smallMem {
+      display: block;
+    }
+    .smallCover {
+      display: block;
+    }
+    .smallRev {
+      display: block;
+    }
+  }
+}
+
+.small {
+  position: absolute;
+  left: 219px;
+  font-family: 'apercu-bold-pro', Fallback, sans-serif;
+  color: #64C5AF;
+  font-size: 16px;
+  padding: 0px 5px;
+  background: white;
+}
+
+.smallFn {
+  top: 165px;
+  display: none;
+}
+
+.smallLn {
+  top: 165px;
+  left: 533px;;
+  display: none;
+}
+
+.smallMem {
+  top: 255px;
+  display: none;
+}
+
+.smallCover {
+  top: 345px;
+  display: none;
+}
+
+.smallRev {
+  top: 435px;
+  display: none;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: opacity 0.3s 0.3s ease;
+  opacity: 0;
+}
+
+.sidecarIconX:before {
+  content: "\78";
+  color: #64C5AF;
+  font-size: 24px;
+  display: inline-block;
+  padding: 23px 0 0 30px;
+  cursor: pointer;
 }

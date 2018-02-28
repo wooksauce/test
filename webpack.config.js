@@ -33,13 +33,14 @@ webpackConfig.module.loaders.push({
 });
 
 webpackConfig.module.loaders.push({
-  test: /\.(eot|svg|ttf|woff|woff2)$/,
-  loader: 'file?name=./src/fonts/[name].[ext]'
-});
+  test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+  loader: 'file-loader',
+  query: {
+    name: '[hash:8].[ext]',
+  },
+})
 
-// webpackConfig.module.loaders.push({
-//   test: [/\.jsx$/],
-//   loaders: ["jsx-loader?insertPragma=React.DOM&harmony"],
-// });
-
+//   test: /\.(eot|svg|ttf|woff|woff2)$/,
+//   loader: 'file?name=./src/fonts/[name].[ext]'
+//
 module.exports = webpackConfig;

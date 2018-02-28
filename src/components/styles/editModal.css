@@ -21,6 +21,7 @@
   width: 522px;
   height: 60px;
   margin: 0 0 30px 30px;
+  font-family: 'apercu-regular-pro', Fallback, sans-serif;
   font-size: 22px;
   padding: 0 0 0 18px;
 }
@@ -35,16 +36,20 @@
   font-size: 24px;
 }
 
-.createdOn{
+.createdOn {
   margin: 30px 0 30px 30px;
-  font-family: 'apercu-bold-pro', Fallback, sans-serif;
+  font-family: 'apercu-regular-pro', Fallback, sans-serif;
   font-size: 18px;
+}
+
+.date {
+  font-family: 'apercu-bold-pro', Fallback, sans-serif;
 }
 
 .small {
   position: absolute;
   left: 45px;
-  font-family: 'apercu-bold-pro', Fallback, sans-serif;
+  font-family: 'apercu-regular-pro', Fallback, sans-serif;
   color: #64C5AF;
   font-size: 16px;
   padding: 0px 5px;
@@ -82,17 +87,38 @@
   margin-left: 30px;
   font-size: 18px;
   border: none;
+  font-family: 'apercu-regular-pro', Fallback, sans-serif;
 }
 
-.delButton {
+.sidecarIconTrash:before {
+  content: "\1f5d1";
+  color: #64C5AF;
   position: absolute;
-  top: 33px;
-  left: 508px;
+  top: 34px;
+  left: 506px;
+  font-size: 22px;
+  cursor: pointer;
 }
 
-.xButton {
+.sidecarIconX:before {
+  content: "\78";
+  color: #64C5AF;
+  font-size: 24px;
   position: absolute;
   top: 36px;
   left: 547px;
   cursor: pointer;
 }
+
+/* .delButton {
+  position: absolute;
+  top: 33px;
+  left: 508px;
+} */
+
+/* .xButton {
+  position: absolute;
+  top: 36px;
+  left: 547px;
+  cursor: pointer;
+} */
