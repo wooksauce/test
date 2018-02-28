@@ -34,7 +34,7 @@ const makeEntries = (accounts = []) => {
     return accounts.map((account) =>
       <AccountEntry
         account={account}
-        key={account.account_number}
+        key={account.accountNum}
       />
     )
   }

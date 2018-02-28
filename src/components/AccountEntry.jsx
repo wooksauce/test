@@ -24,19 +24,34 @@ class AccountEntry extends Component {
     const account = this.props.account;
     return(
       <tr>
-        <td className={styles.firstCol}> {account.account_number} {account.name} </td>
-        <td> {account.created_on} </td>
+        <td className={styles.firstCol}>
+          <div>{account.accountNum} </div>
+          <div>{account.firstName} {account.lastName} </div>
+        </td>
+        <td> {convertDate(account.createdOn)} </td>
         <td> $ {account.membership} </td>
-        <td> $ {account.coverage_level} </td>
+        <td> {account.coverageLevel} % </td>
         <td> $ {account.revenue} </td>
         <td onClick={this.openEditModal}> edit </td>
         <EditModal
           showEditModal={this.state.showEditModal}
           closeEditModal={this.closeEditModal}
+          account={account}
+          covertDate={convertDate}
         />
       </tr>
     )
   }
+}
+
+const convertDate = (date) => {
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const parts = date.split('-');
+  const year = parts[0];
+  const month = months[Number(parts[1]) - 1];
+  const day = Number(parts[2].substring(0,2));
+
+  return month + ' ' + day + ' ' + year;
 }
 
 export default AccountEntry;

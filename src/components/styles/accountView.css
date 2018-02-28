@@ -1,5 +1,7 @@
 .accountTable {
   font-family: 'apercu-regular-pro', Fallback, sans-serif;
+  width: 100%;
+  padding: 40px;
 }
 
 th {

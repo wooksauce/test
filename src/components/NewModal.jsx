@@ -26,7 +26,7 @@ class NewModal extends Component {
   addAccount() {
     axios.post('/api/addNewAccount', {
       firstName: this.state.firstName,
-      lastNaem: this.state.lastName,
+      lastName: this.state.lastName,
       membership: this.state.membership,
       coverageLevel: this.state.coverageLevel,
       revenue: this.state.revenue,

@@ -11,6 +11,7 @@ module.exports = {
       accountNum: acctNum,
       firstName: firstName,
       lastName: lastName,
+      createdOn: new Date(),
       membership: membership,
       coverageLevel: coverageLevel,
       revenue: revenue,
