@@ -14,6 +14,7 @@ class EditModal extends Component {
       revenue: this.props.account.revenue,
     }
     this.handleTyping = this.handleTyping.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
 
   handleTyping(e, field) {
@@ -33,11 +34,13 @@ class EditModal extends Component {
       revenue: this.state.revenue,
     })
     .then (() => {
+      this.props.fetchAllAccounts();
       alert('update successful!');
     })
     .catch (err => {
       console.log('error updating', err);
     })
+    this.props.closeEditModal();
   }
 
   render() {
@@ -104,7 +107,7 @@ class EditModal extends Component {
         </form>
         <button
           className={styles.updateButton}
-          onClick={this.addAccount}
+          onClick={this.handleUpdate}
         >
           Update
         </button>

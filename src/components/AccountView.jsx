@@ -3,12 +3,25 @@ import AccountEntry from './AccountEntry';
 import styles from './styles/accountView.css';
 
 class AccountView extends Component {
+
+  makeEntries(accounts = []) {
+    if (accounts.length) {
+      return accounts.map((account) =>
+        <AccountEntry
+          account={account}
+          key={account.accountNum}
+          fetchAllAccounts={this.props.fetchAllAccounts}
+        />
+      )
+    }
+  }
+
   render() {
     const accounts = this.props.accounts;
     if (!accounts || !accounts.length) {
       return null;
     }
-    const accountEntries = makeEntries(accounts);
+    const accountEntries = this.makeEntries(accounts);
 
     return (
       <table className={styles.accountTable}>
@@ -25,17 +38,6 @@ class AccountView extends Component {
           {accountEntries}
         </tbody>
       </table>
-    )
-  }
-}
-
-const makeEntries = (accounts = []) => {
-  if (accounts.length) {
-    return accounts.map((account) =>
-      <AccountEntry
-        account={account}
-        key={account.accountNum}
-      />
     )
   }
 }

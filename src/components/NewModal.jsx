@@ -31,7 +31,10 @@ class NewModal extends Component {
       coverageLevel: this.state.coverageLevel,
       revenue: this.state.revenue,
     })
-      .then (() => {console.log('success')})
+      .then (() => {
+        this.props.fetchAllAccounts();
+        alert('Account added successfully!')
+      })
       .catch (err => {
         console.log('error occured while saving', err)
       })

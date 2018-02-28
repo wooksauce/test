@@ -38,6 +38,7 @@ class AccountEntry extends Component {
           closeEditModal={this.closeEditModal}
           account={account}
           covertDate={convertDate}
+          fetchAllAccounts={this.props.fetchAllAccounts}
         />
       </tr>
     )

@@ -21,7 +21,7 @@ module.exports = {
           console.log('error occured while reading the json file', err);
       } else {
         obj = JSON.parse(data)
-        obj.push(newAccount); //add some data
+        obj.push(newAccount);
         json = JSON.stringify(obj); //convert it back to json
         fs.writeFile(path.join(__dirname, '../accounts.json'), json, 'utf8', (err) => {
           console.log('error occured while writing file', err);
@@ -29,5 +29,41 @@ module.exports = {
         res.status(202).send(data);
       }
     });
+  },
+
+  updateAccount: (req, res) => {
+    const { accountNum, firstName, lastName, membership, coverageLevel, revenue } = req.body;
+    fs.readFile(path.join(__dirname, '../accounts.json'), 'utf8', (err, data) => {
+      if (err) {
+        console.log('error occured while updating', err);
+      } else {
+        obj = JSON.parse(data);
+        for (let i = 0; i < obj.length; i++) {
+          if (obj[i].accountNum == accountNum) {
+            obj[i].firstName = firstName;
+            obj[i].lastName = lastName;
+            obj[i].membership = membership;
+            obj[i].coverageLevel = coverageLevel;
+            obj[i].revenue = revenue;
+          }
+        }
+        json = JSON.stringify(obj);
+        fs.writeFile(path.join(__dirname, '../accounts.json'), json, 'utf8', (err) => {
+          console.log('error occured while writing file', err);
+        });
+        res.status(202).send(data);
+      }
+    })
+  },
+
+  getAllAccounts: (req, res) => {
+    fs.readFile(path.join(__dirname, '../accounts.json'), 'utf8', (err, data) => {
+      if (err) {
+        console.log('error occured while updating', err);
+      } else {
+        obj = JSON.parse(data);
+        res.status(202).send(obj);
+      }
+    })
   }
 }
