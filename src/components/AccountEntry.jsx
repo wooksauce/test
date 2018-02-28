@@ -25,13 +25,13 @@ class AccountEntry extends Component {
     return(
       <tr>
         <td className={styles.firstCol}>
-          <div>{account.accountNum} </div>
+          <div> {displayAcctNum(account.accountNum)} </div>
           <div>{account.firstName} {account.lastName} </div>
         </td>
         <td> {convertDate(account.createdOn)} </td>
-        <td> $ {account.membership} </td>
-        <td> {account.coverageLevel} % </td>
-        <td> $ {account.revenue} </td>
+        <td> ${account.membership} </td>
+        <td> {account.coverageLevel}% </td>
+        <td> ${account.revenue} </td>
         <td onClick={this.openEditModal}> edit </td>
         <EditModal
           showEditModal={this.state.showEditModal}
@@ -42,6 +42,11 @@ class AccountEntry extends Component {
       </tr>
     )
   }
+}
+
+const displayAcctNum = (acctNum) => {
+  let num = acctNum.toString();
+  return num.substring(0, 4) + ' '  + num.substring(4, 8) + ' ' + num.substring(8, 12) + ' ' + num.substring(12);
 }
 
 const convertDate = (date) => {

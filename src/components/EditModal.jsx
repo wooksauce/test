@@ -1,8 +1,44 @@
 import React, { Component } from 'react';
 import ReactModal from 'react-modal';
 import styles from './styles/editModal.css'
+import axios from 'axios';
 
 class EditModal extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      firstName: this.props.account.firstName,
+      lastName: this.props.account.lastName,
+      coverageLevel: this.props.account.coverageLevel,
+      membership: this.props.account.membership,
+      revenue: this.props.account.revenue,
+    }
+    this.handleTyping = this.handleTyping.bind(this);
+  }
+
+  handleTyping(e, field) {
+    let update = {};
+    update[field] = e.target.value
+    this.setState(update);
+    console.log('states', this.state)
+  }
+
+  handleUpdate() {
+    axios.put('/api/updateAccount', {
+      accountNum: this.props.account.accountNum,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      coverageLevel: this.state.coverageLevel,
+      membership: this.state.membership,
+      revenue: this.state.revenue,
+    })
+    .then (() => {
+      alert('update successful!');
+    })
+    .catch (err => {
+      console.log('error updating', err);
+    })
+  }
 
   render() {
     const { accountNum, firstName, lastName, createdOn, coverageLevel, revenue, membership } = this.props.account;
@@ -16,52 +52,70 @@ class EditModal extends Component {
         overlayClassName={styles.overlay}
       >
         <div className={styles.editHeader}>
-          Account {accountNum}
+          <p className={styles.acctNumInfo} >
+            Account {displayAcctNum(accountNum)}
+          </p>
         </div>
         <hr />
-        <div className={styles.createdOn}>
+        <p className={styles.createdOn}>
           Created On {convertDateEditModal(createdOn)}
-        </div>
+        </p>
         <form className={styles.editForm}>
+          <div className={[styles.small, styles.smallFn].join(' ')}> First name </div>
           <input
-            className={styles.firstName}
+            className={[styles.firstName, styles.newEditInput].join(' ')}
             type="text"
             name="firstName"
-            placeholder="First name"
-            // onChange={(e) => this.handleTyping(e, 'firstName')}
+            value={this.state.firstName}
+            onChange={(e) => this.handleTyping(e, 'firstName')}
           />
+          <div className={[styles.small, styles.smallLn].join(' ')}> Last name </div>
           <input
-            className={styles.lastName}
+            className={[styles.lastName, styles.newEditInput].join(' ')}
             type="text"
             name="lastName"
-            placeholder="Last name"
-            // onChange={(e) => this.handleTyping(e, 'lastName')}
+            value={this.state.lastName}
+            onChange={(e) => this.handleTyping(e, 'lastName')}
           />
+          <div className={[styles.small, styles.smallMem].join(' ')}> Membership </div>
           <input
-            className={styles.membership}
+            className={[styles.membership, styles.newEditInput].join(' ')}
             type="text"
             name="Membership"
-            placeholder="Memebership"
-            // onChange={(e) => this.handleTyping(e, 'membership')}
+            value={this.state.membership}
+            onChange={(e) => this.handleTyping(e, 'membership')}
           />
+          <div className={[styles.small, styles.smallCover].join(' ')}> Coverage Level </div>
           <input
-            className={styles.coverageLevel}
+            className={[styles.coverageLevel, styles.newEditInput].join(' ')}
             type="text"
             name="CoverageLevel"
-            placeholder="Coverage level"
-            // onChange={(e) => this.handleTyping(e, 'coverageLevel')}
+            value={this.state.coverageLevel}
+            onChange={(e) => this.handleTyping(e, 'coverageLevel')}
           />
+          <div className={[styles.small, styles.smallRev].join(' ')}> Revenue </div>
           <input
-            className={styles.revenue}
+            className={[styles.revenue, styles.newEditInput].join(' ')}
             type="text"
             name="Revenue"
-            placeholder="Revenue"
-            // onChange={(e) => this.handleTyping(e, 'revenue')}
+            value={this.state.revenue}
+            onChange={(e) => this.handleTyping(e, 'revenue')}
           />
         </form>
+        <button
+          className={styles.updateButton}
+          onClick={this.addAccount}
+        >
+          Update
+        </button>
       </ReactModal>
     )
   }
+}
+
+const displayAcctNum = (acctNum) => {
+  let num = acctNum.toString();
+  return num.substring(0, 4) + ' '  + num.substring(4, 8) + ' ' + num.substring(8, 12) + ' ' + num.substring(12);
 }
 
 const convertDateEditModal = (date) => {

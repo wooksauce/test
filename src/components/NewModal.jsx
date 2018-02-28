@@ -54,35 +54,35 @@ class NewModal extends Component {
         <hr />
         <form className={styles.newAccountInfo}>
           <input
-            className={styles.firstName}
+            className={[styles.firstName, styles.newModalInput].join(' ')}
             type="text"
             name="firstName"
             placeholder="First name"
             onChange={(e) => this.handleTyping(e, 'firstName')}
           />
           <input
-            className={styles.lastName}
+            className={[styles.lastName, styles.newModalInput].join(' ')}
             type="text"
             name="lastName"
             placeholder="Last name"
             onChange={(e) => this.handleTyping(e, 'lastName')}
           />
           <input
-            className={styles.membership}
+            className={[styles.membership, styles.newModalInput].join(' ')}
             type="text"
             name="Membership"
             placeholder="Memebership"
             onChange={(e) => this.handleTyping(e, 'membership')}
           />
           <input
-            className={styles.coverageLevel}
+            className={[styles.coverageLevel, styles.newModalInput].join(' ')}
             type="text"
             name="CoverageLevel"
             placeholder="Coverage level"
             onChange={(e) => this.handleTyping(e, 'coverageLevel')}
           />
           <input
-            className={styles.revenue}
+            className={[styles.revenue, styles.newModalInput].join(' ')}
             type="text"
             name="Revenue"
             placeholder="Revenue"

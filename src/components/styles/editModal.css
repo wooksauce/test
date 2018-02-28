@@ -17,7 +17,68 @@
   left: 0;
 }
 
-input {
+.newEditInput {
   width: 522px;
   height: 60px;
+  margin: 0 0 30px 30px;
+  font-size: 22px;
+  padding: 0 0 0 18px;
+}
+
+.editHeader {
+  height: 90px;
+}
+
+.acctNumInfo {
+  padding: 30px 0px 0px 30px;
+  font-family: 'apercu-bold-pro', Fallback, sans-serif;
+  font-size: 24px;
+}
+
+.createdOn{
+  margin: 30px 0 30px 30px;
+  font-family: 'apercu-bold-pro', Fallback, sans-serif;
+  font-size: 18px;
+}
+
+.small {
+  position: absolute;
+  left: 45px;
+  font-family: 'apercu-bold-pro', Fallback, sans-serif;
+  color: #64C5AF;
+  font-size: 16px;
+  padding: 0px 5px;
+  background: white;
+}
+
+.smallFn {
+  top: 164px;
+}
+
+.smallLn {
+  top: 254px;
+}
+
+.smallMem {
+  top: 344px;
+}
+
+.smallCover {
+  top: 434px;
+}
+
+.smallRev {
+  top: 524px;
+}
+
+.updateButton {
+  text-align: center;
+  height: 50px;
+  width: 158px;
+  border-radius:5px;
+  background-color: #64C5AF;
+  color: white;
+  display: block;
+  margin-left: 30px;
+  font-size: 18px;
 }
