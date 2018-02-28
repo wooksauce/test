@@ -23,10 +23,10 @@ class AccountEntry extends Component {
   render() {
     const account = this.props.account;
     return(
-      <tr>
+      <tr className={styles.acctRow}>
         <td className={styles.firstCol}>
           <div> {displayAcctNum(account.accountNum)} </div>
-          <div>{account.firstName} {account.lastName} </div>
+          <div className={styles.name}>{account.firstName.toUpperCase()} {account.lastName.toUpperCase()} </div>
         </td>
         <td> {convertDate(account.createdOn)} </td>
         <td> ${account.membership} </td>

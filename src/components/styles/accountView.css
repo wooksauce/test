@@ -1,14 +1,44 @@
+.tableContainer {
+  padding: 37px 0 0 40px;
+}
+
 .accountTable {
   font-family: 'apercu-regular-pro', Fallback, sans-serif;
   width: 100%;
-  padding: 40px;
+  border-collapse: collapse;
 }
 
 th {
   text-align: right;
   font-weight: normal;
+  font-size: 12px;
+  padding: 0 0 18px;
 }
 
 .firstCol {
   text-align: left;
+}
+
+.tableHead {
+  border-bottom: solid 1px #AAAAAA;
+}
+
+th.firstCol {
+  width: 20%;
+}
+
+th.createdOn {
+  width: 20%
+}
+
+th.membership {
+  width: 20%
+}
+
+th.coverLvl {
+  width: 20%
+}
+
+th.revenue {
+  width: 20%
 }

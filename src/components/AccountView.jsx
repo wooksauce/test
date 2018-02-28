@@ -24,20 +24,23 @@ class AccountView extends Component {
     const accountEntries = this.makeEntries(accounts);
 
     return (
-      <table className={styles.accountTable}>
-        <thead>
-          <tr>
-            <th className={styles.firstCol}> ACCOUNT </th>
-            <th> CREATED ON </th>
-            <th> MEMBERSHIP </th>
-            <th> COVERAGE LEVEL </th>
-            <th> REVENUE </th>
-          </tr>
-        </thead>
-        <tbody>
-          {accountEntries}
-        </tbody>
-      </table>
+      <div className={styles.tableContainer}>
+        <table className={styles.accountTable}>
+          <thead className={styles.tableHead}>
+            <tr>
+              <th className={styles.firstCol}> ACCOUNT </th>
+              <th className={styles.createdOn}> CREATED ON </th>
+              <th className={styles.membership}> MEMBERSHIP </th>
+              <th className={styles.coverLvl}> COVERAGE LEVEL </th>
+              <th className={styles.revenue}> REVENUE </th>
+              <th/>
+            </tr>
+          </thead>
+          <tbody>
+            {accountEntries}
+          </tbody>
+        </table>
+      </div>
     )
   }
 }

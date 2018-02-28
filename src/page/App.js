@@ -41,24 +41,28 @@ class App extends Component {
 
   render() {
     return (
-      <div className="mainView">
-        <h1 className={styles.mainHeader}>
-          Accounts
-        </h1>
-        {/* <GraphView /> */}
-        <button className={styles.addNew} onClick={this.openNewModal}>
-          {/* plus sign */}
-          <p> New </p>
-        </button>
-        <NewModal
-          showNewModal={this.state.showNewModal}
-          closeNewModal={this.closeNewModal}
-          fetchAllAccounts={this.fetchAllAccounts}
-        />
-        <AccountView
-          accounts={this.state.accounts}
-          fetchAllAccounts={this.fetchAllAccounts}
-        />
+      <div className={styles.basepage}>
+        <div className={styles.sideStrip}>
+        </div>
+        <div className={styles.mainView}>
+          <h1 className={styles.mainHeader}>
+            Accounts
+          </h1>
+          {/* <GraphView /> */}
+          <button className={styles.addNew} onClick={this.openNewModal}>
+            {/* plus sign */}
+            <p> New </p>
+          </button>
+          <NewModal
+            showNewModal={this.state.showNewModal}
+            closeNewModal={this.closeNewModal}
+            fetchAllAccounts={this.fetchAllAccounts}
+          />
+          <AccountView
+            accounts={this.state.accounts}
+            fetchAllAccounts={this.fetchAllAccounts}
+          />
+        </div>
       </div>
     );
   }
