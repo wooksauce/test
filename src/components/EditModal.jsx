@@ -5,7 +5,6 @@ import styles from './styles/editModal.css'
 class EditModal extends Component {
 
   render() {
-    console.log('wtf', this.props.closeEditModal)
     return (
       <ReactModal
         isOpen={this.props.showEditModal}
