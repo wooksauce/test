@@ -15,6 +15,7 @@ class EditModal extends Component {
     }
     this.handleTyping = this.handleTyping.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleTyping(e, field) {
@@ -43,6 +44,18 @@ class EditModal extends Component {
     this.props.closeEditModal();
   }
 
+  handleDelete() {
+    axios.delete(`/api/deleteAccount/${this.props.account.accountNum}`)
+    .then (() => {
+      this.props.fetchAllAccounts();
+      alert('Account deleted successfully!');
+    })
+    .catch (err => {
+      console.log('error deleting', err);
+    })
+    this.props.closeEditModal();
+  }
+
   render() {
     const { accountNum, firstName, lastName, createdOn, coverageLevel, revenue, membership } = this.props.account;
     return (
@@ -58,6 +71,8 @@ class EditModal extends Component {
           <p className={styles.acctNumInfo} >
             Account {displayAcctNum(accountNum)}
           </p>
+          <div className={styles.delButton} onClick={this.handleDelete}> Del </div>
+          <div className={styles.xButton} onClick={this.props.closeEditModal}> x </div>
         </div>
         <hr />
         <p className={styles.createdOn}>

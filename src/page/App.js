@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import AccountView from '../components/AccountView'
-import NewModal from '../components/NewModal';
-import accounts from '../accounts.json';
 import styles from './App.scss';
 import axios from 'axios';
+
+import AccountView from '../components/AccountView';
+import NewModal from '../components/NewModal';
+// import GraphView from '../components/GraphView';
 
 class App extends Component {
   constructor(props) {
@@ -48,7 +49,7 @@ class App extends Component {
           <h1 className={styles.mainHeader}>
             Accounts
           </h1>
-          {/* <GraphView /> */}
+          {/* <GraphView accounts={this.state.accounts}/> */}
           <button className={styles.addNew} onClick={this.openNewModal}>
             {/* plus sign */}
             <p> New </p>

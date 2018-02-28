@@ -18,15 +18,18 @@ module.exports = {
     }
     fs.readFile(path.join(__dirname, '../accounts.json'), 'utf8', (err, data) => {
       if (err) {
-          console.log('error occured while reading the json file', err);
+        res.status(404).send(err);
       } else {
         obj = JSON.parse(data)
         obj.push(newAccount);
         json = JSON.stringify(obj); //convert it back to json
         fs.writeFile(path.join(__dirname, '../accounts.json'), json, 'utf8', (err) => {
-          console.log('error occured while writing file', err);
+          if (err) {
+            res.status(404).send(err);
+          } else {
+            res.status(202).send(data);
+          }
         });
-        res.status(202).send(data);
       }
     });
   },
@@ -49,9 +52,12 @@ module.exports = {
         }
         json = JSON.stringify(obj);
         fs.writeFile(path.join(__dirname, '../accounts.json'), json, 'utf8', (err) => {
-          console.log('error occured while writing file', err);
+          if (err) {
+            res.status(404).send(err);
+          } else {
+            res.status(202).send(data);
+          }
         });
-        res.status(202).send(data);
       }
     })
   },
@@ -59,10 +65,35 @@ module.exports = {
   getAllAccounts: (req, res) => {
     fs.readFile(path.join(__dirname, '../accounts.json'), 'utf8', (err, data) => {
       if (err) {
-        console.log('error occured while updating', err);
+        res.status(404).send(err);
       } else {
         obj = JSON.parse(data);
         res.status(202).send(obj);
+      }
+    })
+  },
+
+  deleteAccount: (req, res) => {
+    const acctToDelete = req.params.acctNum;
+    fs.readFile(path.join(__dirname, '../accounts.json'), 'utf8', (err, data) => {
+      if (err) {
+        res.status(404).send(err);
+      } else {
+        obj = JSON.parse(data);
+        for (let i = 0; i < obj.length; i++) {
+          if (obj[i].accountNum == acctToDelete) {
+            obj.splice(i, 1);
+          }
+        }
+        json = JSON.stringify(obj);
+        console.log('json', json)
+        fs.writeFile(path.join(__dirname, '../accounts.json'), json, 'utf8', (err) => {
+          if (err) {
+            res.status(404).send(err)
+          } else {
+            res.status(202).send(data);
+          }
+        });
       }
     })
   }

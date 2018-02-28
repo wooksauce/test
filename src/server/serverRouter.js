@@ -7,4 +7,6 @@ router.post('/addNewAccount', control.addNewAccount);
 
 router.put('/updateAccount', control.updateAccount);
 
+router.delete('/deleteAccount/:acctNum', control.deleteAccount);
+
 module.exports = router;

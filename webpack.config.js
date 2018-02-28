@@ -10,7 +10,7 @@ const webpackConfig = {
     loaders: [],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.webpack.js', '.web.js', '.js', '.jsx'],
   },
   devtool: 'inline-source-map',
 };
@@ -36,5 +36,10 @@ webpackConfig.module.loaders.push({
   test: /\.(eot|svg|ttf|woff|woff2)$/,
   loader: 'file?name=./src/fonts/[name].[ext]'
 });
+
+// webpackConfig.module.loaders.push({
+//   test: [/\.jsx$/],
+//   loaders: ["jsx-loader?insertPragma=React.DOM&harmony"],
+// });
 
 module.exports = webpackConfig;

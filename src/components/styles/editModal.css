@@ -83,3 +83,16 @@
   font-size: 18px;
   border: none;
 }
+
+.delButton {
+  position: absolute;
+  top: 33px;
+  left: 508px;
+}
+
+.xButton {
+  position: absolute;
+  top: 36px;
+  left: 547px;
+  cursor: pointer;
+}
