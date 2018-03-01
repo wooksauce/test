@@ -1,51 +1,56 @@
 import React, { Component } from 'react';
-import { Chart } from 'react-d3-core';
-import { BarChart } from 'react-d3-basic';
+import PropTypes from 'prop-types';
+import ChartistGraph from 'react-chartist';
+import './styles/GraphView.css';
 
 class GraphView extends Component {
-  // load your general data
+
   render() {
-    const chartData = [{
-      "accountNum": 1234700024242152,
-      "revenue": 2000
-    }, {
-      "accountNum": 5464527864626811,
-      "revenue": "2000"
-    }, {
-      "accountNum": 9031477656143980,
-      "revenue": "2800"
-    }];
+    let accounts = this.props.accounts;
+    if (!accounts || !accounts.length) {
+      return null;
+    }
+    let temp = accounts.slice(0);
+    let sortedByRevenue = temp.sort((a, b) => {
+      return b.revenue - a.revenue;
+    });
+    let names = [];
+    let revenues = [];
+    for (let i = 0; i < 4; i++) {
+      names.push(sortedByRevenue[i].firstName + ' ' + sortedByRevenue[i].lastName);
+      revenues.push(sortedByRevenue[i].revenue);
+    }
 
-    // var width = 700,
-    //   height = 400,
-    //   title = "Bar Chart",
-    //   chartSeries = [
-    //     {
-    //       field: 'revenue',
-    //       name: 'revenue'
-    //     }
-    //   ],
-    //   x = function(d) {
-    //     return d.accountNums;
-    //   },
-    //   xScale = 'ordinal',
-    //   xLabel = "Letter",
-    //   yLabel = "Frequency",
-    //   yTicks = [10, "%"];
+    const data ={
+      labels: names,
+      series: [
+        revenues
+      ],
+    }
 
-    return(
-      <BarChart
-        // title= {title}
-        data= {chartData}
-        // width= {width}
-        // height= {height}
-        // chartSeries = {chartSeries}
-        // x= {x}
-        // xLabel= {xLabel}
-        // xScale= {xScale}
-        // yTicks= {yTicks}
-        // yLabel = {yLabel}
-      />
+    console.log('data', data)
+
+    var options = {
+      width: 1295,
+      height: 380,
+      seriesBarDistance: 10,
+      axisX: {
+        offset: 60
+      },
+      axisY: {
+        offset: 80,
+        labelInterpolationFnc: function(value) {
+          return value % 1000 === 0 ? '$' + value: null;
+        },
+        scaleMinSpace: 15,
+      },
+      low: 0,
+    }
+
+    var type = 'Bar'
+
+    return (
+      <ChartistGraph data={data} options={options} type={type} />
     )
   }
 }
