@@ -3,9 +3,9 @@ import styles from './App.scss';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
-import AccountView from '../components/AccountView';
-import NewModal from '../components/NewModal';
-import GraphView from '../components/GraphView';
+import AccountView from '../components/account_view/AccountView';
+import NewModal from '../components/new_modal/NewModal';
+import GraphView from '../components/graph_view/GraphView';
 
 class App extends Component {
   constructor(props) {
@@ -54,8 +54,14 @@ class App extends Component {
             Accounts
           </h1>
           <GraphView accounts={this.state.accounts}/>
-          <button className={styles.addNew} onClick={this.openNewModal}>
-            <span aria-hidden="true" className={styles.sidecarIconPlus}></span>
+          <button
+            className={styles.addNew}
+            onClick={this.openNewModal}
+          >
+            <span
+              aria-hidden="true"
+              className={styles.sidecarIconPlus}
+            />
             <p className={styles.newButtonText}> New </p>
           </button>
           <NewModal
@@ -71,6 +77,11 @@ class App extends Component {
       </div>
     );
   }
+}
+
+App.propTypes = {
+  accounts: PropTypes.array,
+  showNewModal: PropTypes.bool,
 }
 
 export default App;

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import styles from './styles/accountEntry.css';
-import EditModal from './EditModal';
+import PropTypes from 'prop-types';
+import EditModal from '../edit_modal/EditModal';
+import { displayAcctNum, convertDateAcctEntry } from '../../utils/utils'
+
+import styles from './accountEntry.scss';
 
 class AccountEntry extends Component {
   constructor(props) {
@@ -22,13 +25,16 @@ class AccountEntry extends Component {
 
   render() {
     const account = this.props.account;
+    if (!account) {
+      return null;
+    }
     return(
       <tr className={styles.acctRow}>
         <td className={styles.firstCol}>
           <div> {displayAcctNum(account.accountNum)} </div>
-          <div className={styles.name}>{account.firstName.toUpperCase()} {account.lastName.toUpperCase()} </div>
+          <div className={styles.name}> {account.firstName} {account.lastName} </div>
         </td>
-        <td> {convertDate(account.createdOn)} </td>
+        <td> {convertDateAcctEntry(account.createdOn)} </td>
         <td> ${account.membership} </td>
         <td> {account.coverageLevel}% </td>
         <td> ${account.revenue} </td>
@@ -36,13 +42,15 @@ class AccountEntry extends Component {
           onClick={this.openEditModal}
           className={styles.editIcon}
         >
-          <span aria-hidden="true" className={styles.sidecarIconEdit}></span>
+          <span
+            aria-hidden="true"
+            className={styles.sidecarIconEdit}
+          />
         </td>
         <EditModal
           showEditModal={this.state.showEditModal}
           closeEditModal={this.closeEditModal}
           account={account}
-          covertDate={convertDate}
           fetchAllAccounts={this.props.fetchAllAccounts}
         />
       </tr>
@@ -50,19 +58,9 @@ class AccountEntry extends Component {
   }
 }
 
-const displayAcctNum = (acctNum) => {
-  let num = acctNum.toString();
-  return num.substring(0, 4) + ' '  + num.substring(4, 8) + ' ' + num.substring(8, 12) + ' ' + num.substring(12);
-}
-
-const convertDate = (date) => {
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  const parts = date.split('-');
-  const year = parts[0];
-  const month = months[Number(parts[1]) - 1];
-  const day = Number(parts[2].substring(0,2));
-
-  return month + ' ' + day + ' ' + year;
+AccountEntry.propTypes = {
+  account: PropTypes.object,
+  fetchAllAccounts: PropTypes.func,
 }
 
 export default AccountEntry;

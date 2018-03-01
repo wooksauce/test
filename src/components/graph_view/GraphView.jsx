@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
 import ChartistGraph from 'react-chartist';
 import chartist from 'chartist';
-import './styles/graphView.css';
+import './graphView.css';
 
 class GraphView extends Component {
 
@@ -67,6 +68,10 @@ class GraphView extends Component {
       </div>
     )
   }
+}
+
+GraphView.propTypes = {
+  accounts: PropTypes.array,
 }
 
 export default GraphView;

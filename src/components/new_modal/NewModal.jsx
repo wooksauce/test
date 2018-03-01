@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactModal from 'react-modal';
-import styles from './styles/newModal.scss';
 import axios from 'axios';
+
+import styles from './newModal.scss';
 
 class NewModal extends Component {
   constructor(props) {
@@ -116,6 +118,12 @@ class NewModal extends Component {
       </ReactModal>
     )
   }
+}
+
+NewModal.propTypes = {
+  showNewModal: PropTypes.bool,
+  closeNewModal: PropTypes.func,
+  fetchAllAccounts: PropTypes.func,
 }
 
 export default NewModal;

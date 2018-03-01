@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactModal from 'react-modal';
-import styles from './styles/editModal.css'
 import axios from 'axios';
+
+import { displayAcctNum, convertDateEditModal } from '../../utils/utils'
+import styles from './editModal.scss'
 
 class EditModal extends Component {
   constructor (props) {
@@ -19,9 +22,12 @@ class EditModal extends Component {
   }
 
   handleTyping(e, field) {
-    let update = {};
-    update[field] = e.target.value
-    this.setState(update);
+    if (e && field && e.target) {
+      this.setState({
+        [field]: e.target.value
+      });
+      console.log('states', this.state)
+    }
   }
 
   handleUpdate() {
@@ -67,7 +73,7 @@ class EditModal extends Component {
         overlayClassName={styles.overlay}
       >
         <div className={styles.editHeader}>
-          <p className={styles.acctNumInfo} >
+          <p className={styles.acctNumInfo}>
             Account {displayAcctNum(accountNum)}
           </p>
           <span
@@ -138,18 +144,11 @@ class EditModal extends Component {
   }
 }
 
-const displayAcctNum = (acctNum) => {
-  let num = acctNum.toString();
-  return num.substring(0, 4) + ' '  + num.substring(4, 8) + ' ' + num.substring(8, 12) + ' ' + num.substring(12);
-}
-
-const convertDateEditModal = (date) => {
-  const parts = date.split('-');
-  const year = parts[0].substring(2);
-  const month = Number(parts[1]);
-  const day = Number(parts[2].substring(0,2));
-
-  return month + '/' + day + '/' + year;
+EditModal.propTypes = {
+  showEditModal: PropTypes.bool,
+  closeEditModal: PropTypes.func,
+  account: PropTypes.object,
+  fetchAllAccounts: PropTypes.func,
 }
 
 export default EditModal;

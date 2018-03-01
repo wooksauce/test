@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import AccountEntry from './AccountEntry';
-import styles from './styles/accountView.css';
+import PropTypes from 'prop-types';
+
+import AccountEntry from '../account_entry/AccountEntry';
+import styles from './accountView.scss';
 
 class AccountView extends Component {
 
@@ -43,6 +45,11 @@ class AccountView extends Component {
       </div>
     )
   }
+}
+
+AccountView.propTypes = {
+  accounts: PropTypes.array,
+  fetchAllAccounts: PropTypes.func,
 }
 
 export default AccountView;
