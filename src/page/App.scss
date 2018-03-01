@@ -102,3 +102,12 @@
   display: inline-block;
   padding-left: 10px;
 }
+
+.scIcon {
+  width: 100%;
+  height: 65px;
+  background-image: url('../../src/sc-icon.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

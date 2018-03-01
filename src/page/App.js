@@ -44,7 +44,9 @@ class App extends Component {
     return (
       <div className={styles.basepage}>
         <div className={styles.sideStrip}>
-          <span aria-hidden="true" className={styles.sidecarIconBack}></span>
+          <div
+            className={styles.scIcon}
+          />
         </div>
         <div className={styles.mainView}>
           <h1 className={styles.mainHeader}>
