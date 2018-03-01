@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ChartistGraph from 'react-chartist';
+import chartist from 'chartist';
 import './styles/graphView.css';
 
 class GraphView extends Component {
 
   render() {
-    let accounts = this.props.accounts;
+    const accounts = this.props.accounts;
     if (!accounts || !accounts.length) {
       return null;
     }
     let temp = accounts.slice(0);
-    let sortedByRevenue = temp.sort((a, b) => {
+    const sortedByRevenue = temp.sort((a, b) => {
       return b.revenue - a.revenue;
     });
-    let names = [];
-    let revenues = [];
+    const names = [];
+    const revenues = [];
     for (let i = 0; i < 4; i++) {
       names.push(sortedByRevenue[i].firstName + ' ' + sortedByRevenue[i].lastName);
       revenues.push(sortedByRevenue[i].revenue);
@@ -28,29 +29,42 @@ class GraphView extends Component {
       ],
     }
 
-    console.log('data', data)
+    const steps = [0];
+    const step = Math.floor((revenues[0] - revenues[0]%1000) / 3) - Math.floor((revenues[0] - revenues[0]%1000) / 3)%1000;
+    for (let i = 0; i < 3; i++) {
+      steps.push(step * (i + 1));
+    }
 
     var options = {
-      width: 1295,
-      height: 380,
-      seriesBarDistance: 10,
+      width: 1215,
+      height: 250,
       axisX: {
-        offset: 60
+        // offset: 30,
       },
       axisY: {
-        offset: 80,
-        labelInterpolationFnc: function(value) {
-          return value % 1000 === 0 ? '$' + value: null;
+        offset: 10,
+        labelInterpolationFnc: function(value, ind) {
+          if (ind % 3 === 0) {
+            return '$' + value;
+          }
         },
-        scaleMinSpace: 15,
+        scaleMinSpace: 12,
       },
-      low: 0,
+      chartPadding: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0
+      },
     }
 
     var type = 'Bar'
 
     return (
-      <ChartistGraph data={data} options={options} type={type} />
+      <div className="graphContainer">
+        <p className="revenueAxis"> Revenue </p>
+        <ChartistGraph data={data} options={options} type={type} />
+      </div>
     )
   }
 }

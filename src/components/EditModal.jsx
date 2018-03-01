@@ -22,7 +22,6 @@ class EditModal extends Component {
     let update = {};
     update[field] = e.target.value
     this.setState(update);
-    console.log('states', this.state)
   }
 
   handleUpdate() {
@@ -36,7 +35,6 @@ class EditModal extends Component {
     })
     .then (() => {
       this.props.fetchAllAccounts();
-      alert('update successful!');
     })
     .catch (err => {
       console.log('error updating', err);
@@ -49,7 +47,6 @@ class EditModal extends Component {
       axios.delete(`/api/deleteAccount/${this.props.account.accountNum}`)
       .then (() => {
         this.props.fetchAllAccounts();
-        alert('Account deleted successfully!');
       })
       .catch (err => {
         console.log('error deleting', err);
