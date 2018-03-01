@@ -26,14 +26,18 @@ webpackConfig.module.loaders.push({
 });
 
 webpackConfig.module.loaders.push({
-  test: /\.(scss|css)$/,
-  loader: 'style-loader!css-loader?modules&sourceMap&localIdentName=[local]___[hash:base64:5]!sass-loader?outputStyle=expanded&sourceMap'
-  ,
-  // loader: 'style-loader!css-loader!resolve-url-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+  test: /graphView\.css$/,
+  loaders: ['style-loader', 'css-loader']
 });
 
 webpackConfig.module.loaders.push({
-  test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+  test: /\.(scss|css)$/,
+  exclude: /graphView\.css$/,
+  loader: 'style-loader!css-loader?modules&sourceMap&localIdentName=[local]___[hash:base64:5]!sass-loader?outputStyle=expanded&sourceMap',
+});
+
+webpackConfig.module.loaders.push({
+  test: /\.(ico|jpg|jpeg|png|gif|eot|otf|svg|webp|ttf|woff|woff2)(\?.*)?$/,
   loader: 'file-loader',
   query: {
     name: '[hash:8].[ext]',

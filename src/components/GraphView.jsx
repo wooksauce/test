@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ChartistGraph from 'react-chartist';
-import './styles/GraphView.css';
+import './styles/graphView.css';
 
 class GraphView extends Component {
 
