@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+<<<<<<< HEAD
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import './styles/GraphView.css';
+=======
+import ChartistGraph from 'react-chartist';
+import './styles/graphView.css';
+>>>>>>> graph
 
 class GraphView extends Component {
 
