@@ -33,7 +33,7 @@ webpackConfig.module.loaders.push({
 });
 
 webpackConfig.module.loaders.push({
-  test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+  test: /\.(ico|jpg|jpeg|png|gif|eot|otf|svg|webp|ttf|woff|woff2)(\?.*)?$/,
   loader: 'file-loader',
   query: {
     name: '[hash:8].[ext]',
