@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-<<<<<<< HEAD
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import './styles/GraphView.css';
-=======
 import ChartistGraph from 'react-chartist';
 import './styles/graphView.css';
->>>>>>> graph
 
 class GraphView extends Component {
 
@@ -15,31 +10,47 @@ class GraphView extends Component {
     if (!accounts || !accounts.length) {
       return null;
     }
-    let clone = accounts.slice(0);
-    let sortedByRevenue = clone.sort((a, b) => {
+    let temp = accounts.slice(0);
+    let sortedByRevenue = temp.sort((a, b) => {
       return b.revenue - a.revenue;
     });
-    let data = [];
+    let names = [];
+    let revenues = [];
     for (let i = 0; i < 4; i++) {
-      let temp = {};
-      temp['name'] = sortedByRevenue[i].firstName + ' ' + sortedByRevenue[i].lastName;
-      temp['revenue'] = sortedByRevenue[i].revenue;
-      data.push(temp);
+      names.push(sortedByRevenue[i].firstName + ' ' + sortedByRevenue[i].lastName);
+      revenues.push(sortedByRevenue[i].revenue);
+    }
+
+    const data ={
+      labels: names,
+      series: [
+        revenues
+      ],
     }
 
     console.log('data', data)
 
+    var options = {
+      width: 1295,
+      height: 380,
+      seriesBarDistance: 10,
+      axisX: {
+        offset: 60
+      },
+      axisY: {
+        offset: 80,
+        labelInterpolationFnc: function(value) {
+          return value % 1000 === 0 ? '$' + value: null;
+        },
+        scaleMinSpace: 15,
+      },
+      low: 0,
+    }
+
+    var type = 'Bar'
+
     return (
-      <div>
-        <BarChart width={1295} height={380} data={data}>
-          <XAxis dataKey="name"/>
-          <YAxis/>
-          <CartesianGrid stroke="#ccc"/>
-          <Tooltip/>
-          <Legend />
-          <Bar type="monotone" dataKey="revenue" fill="#8884d8" barSize={80} />
-        </BarChart>
-      </div>
+      <ChartistGraph data={data} options={options} type={type} />
     )
   }
 }
